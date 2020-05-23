@@ -1,0 +1,20 @@
+<%- include('../partials/header'); %>
+
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="text-center formTitle">Add new Comment to: <%= book.title %>!</h1>
+    </div>
+    <div class="col-lg-6 offset-lg-3">
+        <form action="/books/<%= book._id %>/comments" method="POST">
+            <fieldset class="form-group">
+                <label for="text">Text:</label>
+                <input class="form-control" type="text" name="comment[text]" id="text">
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-success btn-block">Submit!</button>
+            </div>
+            <a href="/books">Go Back</a>
+        </form>
+    </div>
+
+    <%- include('../partials/footer'); %>

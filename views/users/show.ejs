@@ -1,0 +1,34 @@
+<%- include('../partials/header'); %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 profileCard">
+            <h1 id="username"><%= user.username %></h1>
+            <hr>
+            <img class="center" src="<%= user.avatar%>" id="avatar" alt="User profile image">
+            <h3 class="center"><%= user.firstName %> <%= user.lastName %></h3>
+            <hr>
+            <div class="center"><a href="mailto:<%= user.email %>" id="userEmail"><i class="fas fa-envelope"></i>
+                    <%= user.email %></a></div>
+            <hr>
+            <h5 class="center">About:</h5>
+            <p class="center"><%= user.about %></p>
+        </div>
+        <div class="col-md-9 center">
+            <h3><%= user.firstName %>'s books:</h3>
+            <ul id="profileBooks">
+                <% books.forEach(function(book){ %>
+                <li>
+                    <a id="profileBooksTitle" href="/books/<%= book.id %>"><%= book.title %></a>
+                    <div>
+                        <a href="/books/<%= book.id %>">
+                            <img id="profileBooksImg" src="<%= book.image %>">
+                        </a>
+                    </div>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+
+    <%- include('../partials/footer'); %>

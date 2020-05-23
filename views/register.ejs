@@ -1,0 +1,51 @@
+<%- include('./partials/header'); %>
+
+<div class="container registerForm">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center formTitle">Sign Up</h1>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+            <form action="/register" method="POST">
+                <fieldset class="form-group">
+                    <label for="username">Username:</label>
+                    <input class="form-control" type="text" name="username">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="password">Password:</label>
+                    <input id="password-field" class="form-control" type="password" name="password">
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="firstName">First name:</label>
+                    <input class="form-control" type="text" name="firstName">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="lastName">Last name:</label>
+                    <input class="form-control" type="text" name="lastName">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" name="email">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="avatar">Avatar URL:</label>
+                    <input class="form-control" type="text" name="avatar">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="about">About:</label>
+                    <input class="form-control" type="text" name="about">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="adminCode">Admin code:</label>
+                    <input class="form-control" type="text" name="adminCode">
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-success btn-block">Sign Up!</button>
+                </div>
+            </form>
+            <a href="/books">Go Back</a>
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs'); %>

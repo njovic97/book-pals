@@ -1,0 +1,41 @@
+<%- include('../partials/header'); %>
+
+<header id="booksIndex" class="card card-image">
+    <div id="booksText" class="text-white text-center rgba-stylish-strong py-5 px-4">
+        <div class="py-5">
+            <h4 class="h4 orange-text">N | J <i class="fas fa-book-open"></i> Pals</h4>
+            <h2 class="card-title h2 my-4 py-2">
+                Rate and share impressions of your favorite books!</h2>
+            <div class="wrapperSearch">
+                <form action="/books" method="GET" class="form-inline">
+                    <fieldset class="formRow">
+                        <div class="formRow--item">
+                            <label for="search" class="formRow--input-wrapper js-inputWrapper">
+                                <input type="text" name="search" class="formRow--input js-input" id="search"
+                                    placeholder="Search books...">
+                                <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="allBooks" class="container">
+    <div class="row text-center">
+        <% books.forEach(function(book){ %>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div id="oneBook" class="figure">
+                <a href="/books/<%= book._id %>">
+                    <img class="figure-img img-fluid rounded" src="<%= book.image %>" alt="Book Image">
+                    <h3 class="figure-caption text-left"><%= book.title %></h3>
+                </a>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs'); %>

@@ -1,0 +1,28 @@
+<%- include('./partials/header'); %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center formTitle">Login</h1>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+            <form action="/login" method="POST">
+                <fieldset class="form-group">
+                    <label for="username">Username:</label>
+                    <input class="form-control" type="text" name="username">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="password">Password:</label>
+                    <input id="password-field" class="form-control" type="password" name="password">
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-success btn-block">Login</button>
+                </div>
+            </form>
+            <a href="/books">Go Back</a>
+            <a class="float-right" href="/forgot">Forgot password?</a>
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs'); %>

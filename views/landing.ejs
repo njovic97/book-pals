@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>N | J BookPals</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/landing.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"
+        async></script>
+    <script src="https://kit.fontawesome.com/035cbc1ef6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+        <% } %>
+    </div>
+    <div id="landing-header">
+        <h1>Welcome to BookPals!</h1>
+        <div class="wrapperSearch">
+            <form action="/books" method="GET" class="form-inline">
+                <fieldset class="formRow">
+                    <div class="formRow--item">
+                        <label for="search" class="formRow--input-wrapper js-inputWrapper">
+                            <input type="text" name="search" class="formRow--input js-input" id="search"
+                                placeholder="Search books...">
+                            <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+                        </label>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <a href="/books" class="btn btn-outline-info">View All Books</a>
+    </div>
+    </div>
+    <ul class="slideshow">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <%- include('partials/footer'); %>
